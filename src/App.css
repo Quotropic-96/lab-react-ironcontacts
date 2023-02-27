@@ -18,7 +18,19 @@ table {
 th, td {
   text-align: center;
 }
+.profile-pic {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.delete-btn {
+  border: 1px solid brown;
+  border-radius: 3px;
+  color: brown;
+  padding: 5px;
+  background-color: white;
 
+}
 .btn {
   margin: 30px 0 100px 0;
 }

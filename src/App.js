@@ -29,6 +29,11 @@ function App() {
     setContacts(sortedContacts);
   }
 
+  const handleDeleteStar = (id) => {
+    const filteredContacts = [...contacts].filter(elem => elem.id !== id);
+    setContacts(filteredContacts);
+  }
+
   return <div className="App">
     <h1>IronContacts</h1>
     <button onClick={handleSortByName}>Sort By Name</button>
@@ -44,9 +49,9 @@ function App() {
         </tr>
       </thead>
       <tbody>
-        {contacts.map((elem, idx) => 
-            <tr key={idx}>
-              <td><img src={elem.pictureUrl} alt="Profile" /></td>
+        {contacts.map(elem => 
+            <tr key={elem.id}>
+              <td className="profile-pic"><button onClick={() => handleDeleteStar(elem.id)} className="delete-btn">Delete</button><img src={elem.pictureUrl} alt="Profile" /></td>
               <td>{elem.name}</td>
               <td>{elem.popularity}</td>
               <td>{elem.wonOscar && <span>🏆</span>}</td>
