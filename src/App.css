@@ -18,3 +18,7 @@ table {
 th, td {
   text-align: center;
 }
+
+.btn {
+  margin: 30px 0 100px 0;
+}
